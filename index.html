@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- タイトル -->
+    <title>ゲームで使えるチャットルーム</title>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'xvo8afm',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <h1>ゲームで使えるチャットルーム</h1>
+    </header>
+    <!-- メイン  -->
+    <main>
+        <div class="container">
+            <form method="post" action="" enctype="multipart/form-data">
+                <!-- ユーザ名入力 -->
+                <div class="form-floating mb-3 input_area">
+                    <input type="text" class="form-control" id="userName">
+                    <label for="userName">ユーザ名</label>
+                </div>
+                <!-- コメント入力 -->
+                <div class="form-floating input_area">
+                    <textarea class="form-control" id="comment" style="height: 100px"></textarea>
+                    <label for="comment">コメント</label>
+                </div>
+                <!-- アイコン -->
+                <div class="form-floating icon_select_area">
+                    <select class="form-select" id="icon_select">
+                        <option selected disabled value="">-- 選択してください --</option>
+                        <option value="1">ペンギン</option>
+                        <option value="2">アザラシ</option>
+                    </select>
+                    <label for="icon_select">アイコン選択</label>
+                </div>
+                <!-- プロフィール画像登録 -->
+                <div class="input-group mb-3 input_area">
+                    <input type="file" class="form-control" id="profile_img" name="input_file" value="">
+                    <label class="input-group-text" for="profile_img">アイコン画像</label>
+                </div>
+                <!-- 送信ボタン -->
+                <div class="submit_btn_area">
+                    <button type="button" class="btn btn-outline-primary" id="submit_btn">コメント送信</button>
+                    <button type="button" class="btn btn-outline-success" id="dice_btn">サイコロを振る</button>
+                </div>
+                <!-- チャット表示 -->
+                <div id="output" class="output_area">
+                </div>
+            </form>
+        </div>   
+    </main>
+    <!-- フッター -->
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="js/app.js" charset="utf-8"></script>
+</body>
+</html>
